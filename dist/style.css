@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body {
   margin: 0;
+  height: 3000px;
 }
 
 .container {
@@ -52,12 +53,12 @@ body {
 
 /* Styles pour la div enfant positionnée par rapport à la page */
 .enfant {
-  width: 200px; /* Augmenté la taille de l'enfant */
+  width: 200px;
   height: 200px;
   z-index: -6;
   background-color: rgba(255, 192, 203, 0);
-  top: 10vw; /* Par rapport à la page */
-  left: 20vw; /* Par rapport à la page */
+  top: 10vw;
+  left: 20vw;
 }
 
 .enfant.titre {

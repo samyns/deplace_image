@@ -9,23 +9,20 @@ const parent = document.querySelector('.parent')
 
 
 
-            window.addEventListener('mousemove', (e) =>{
+            window.addEventListener('mousemove', (e) => {
 
 
                 const mouv_blanc = 40
                 const mouv_contain = 20
 
-                let transletX = (e.clientX - window.innerWidth/2) / mouv_blanc
-                let transletY = (e.clientY - window.innerHeight/2) / mouv_blanc
+                let transletX = (e.clientX - window.innerWidth / 2) / mouv_blanc
+                let transletY = (e.clientY - window.innerHeight / 2) / mouv_blanc
 
 
-
-                let translet_X = (e.clientX - window.innerWidth/2) / mouv_contain -50
-                let translet_Y = (e.clientY - window.innerHeight/2) / mouv_contain -50
-
+                let translet_X = (e.clientX - window.innerWidth / 2) / mouv_contain - 50
+                let translet_Y = (e.clientY - window.innerHeight / 2) / mouv_contain - 50
 
 
-                window.addEventListener('scroll', () => {});
 
 
                 const bonjour = (-50 - translet_X) + transletX
@@ -37,7 +34,9 @@ const parent = document.querySelector('.parent')
                 const tes2Y = (6.55 + transletY * 0.7)
                 const tes2X = (30.55 + transletX * 0.7)
                 const tes3Y = (14.4 + transletY * 0.1)
-                const tes4Y = (14.4 + transletY * 0.1) + window.scrollY * -0.073
+
+                const tes4Y = (14.4 + transletY * 0.1 - scrollY * 0.0724)
+
 
                 const tes3X = (5 + transletX * 0.1)
                 container.style.top = `${tesY}vw`
@@ -53,25 +52,20 @@ const parent = document.querySelector('.parent')
                 blanc.style.transform = `translateX(${bonjour}%) translateY(${bonjourY}% ) scale( 1)`
 
 
-
             })
-            window.addEventListener('scroll', () => {
-                console.log(window.scrollY);
-                const rect = titre2.getBoundingClientRect()
-                const positionEnVW = {
-                    top: rect.top / window.innerWidth * 100, // La position en haut en vw
-                };
-                const testY =14.4 + window.scrollY * -0.073
-                console.log(positionEnVW.top)
-                titre2.style.top = `${testY}vw`
 
 
 
 
 
-            });
+window.addEventListener('scroll', (e) => {
+    const scrollY = window.scrollY ;
+
+        const newTopValue = (14.4 - scrollY * 0.0724);
+        titre2.style.top = `${newTopValue}vw`;
 
 
 
 
+});
 
